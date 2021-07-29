@@ -1,0 +1,27 @@
+{
+  "name": "erdi-taskin-nodetjs-practical-task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitea.scopicsoftware.com:scopic-trainings/erdi-taskin-nodetjs-practical-task.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "connect-redis": "^6.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "express-socket.io-session": "^1.3.5",
+    "nodemon": "^2.0.12",
+    "redis": "^3.1.2",
+    "socket.io": "^4.1.3",
+    "socket.io-express-session": "^0.1.3"
+  }
+}

@@ -1,0 +1,39 @@
+<%- include('layout/header') %>
+<div class="container-fluid fh">
+ <div class="row fh">
+  <div class="col-3 fh side-bar"><%- include('layout/side') %></div>
+  <div class="col-9 fh right-content">
+   <nav class="navbar navbar-dark bg-light header xrow">
+    <div class="user-actions">
+     Signed as <label id="userName"><%= user %></label>
+     <a href="/logout" class="logout">Logout</a>
+    </div>
+   </nav>
+   <div class="chat-area xrow scroll-y empty" id="chatArea">
+    <p>
+     <span>There are no messages yet.</span>
+    </p>
+   </div>
+   <div class="info-box xrow hidden" id="infoArea"></div>
+   <div class="send-message xrow">
+    <form id="sendMessageForm">
+     <div class="col-sm-12 inline-button">
+      <input
+       type="text"
+       class="form-control"
+       id="sendMessageInput"
+       name="message"
+       placeholder="Write your message"
+       autocomplete="off"
+      />
+      <button type="submit" class="btn btn-success" id="sendMessageButton">
+       Send
+      </button>
+     </div>
+    </form>
+   </div>
+  </div>
+ </div>
+</div>
+<script src="scripts/chat.js"></script>
+<%- include('layout/footer') %>

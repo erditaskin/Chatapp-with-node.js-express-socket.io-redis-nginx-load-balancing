@@ -1,0 +1,30 @@
+<%- include('layout/header') %>
+<div class="container-fluid fh">
+ <div class="row fh">
+  <div class="col-3 fh side-bar"><%- include('layout/side') %></div>
+  <div class="col-9 fh">
+   <div class="h-100 d-flex align-items-center">
+    <div class="fw">
+     <form method="post">
+      <div class="form-group row pt-4">
+       <div class="col-sm-3 inline-button">
+        <input
+         type="text"
+         class="form-control"
+         name="user"
+         placeholder="Enter a nickname"
+         autocomplete="off"
+        />
+        <button type="submit" class="btn btn-dark">Submit</button>
+       </div>
+      </div>
+      <p class="text-muted mt-1">
+       You'll be joined common chat room after you submit your nickname.
+      </p>
+     </form>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+<%- include('layout/footer') %>
