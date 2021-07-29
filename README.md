@@ -1,5 +1,5 @@
 ## ChatApp
-This app is made for fulfilling requirements of given node.js assesment task.
+Simple chat app build with node.js, express, redis, socket.io and compatible with running app with multiple instances such as nginx load balancing.
 
 Project features
 1. It can run while multiple instances running.
