@@ -12,7 +12,7 @@ module.exports = function (io) {
     socket.on('chat', function (data) {
       // publishing message to all clients
       pub.publish('chat', JSON.stringify({
-        user: socket.handshake.session.user !== undefined ? socket.handshake.session.user : data.user,
+        user: socket.handshake.session.user,
         message: data.message
       }));
     });
@@ -21,7 +21,7 @@ module.exports = function (io) {
     socket.on('typing', function (data) {
       // publishing who's writing data to all clients
       pub.publish('typing', JSON.stringify({
-        user: socket.handshake.session.user !== undefined ? socket.handshake.session.user : data.user,
+        user: socket.handshake.session.user,
         typing: data.typing
       }));
     });

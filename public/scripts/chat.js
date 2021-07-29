@@ -1,4 +1,4 @@
-const server = 'http://localhost:3000';
+const server = window.location.host;
 const socket = io.connect(server);
 
 let chatArea = document.getElementById("chatArea");
@@ -10,8 +10,7 @@ let infoArea = document.getElementById("infoArea");
 sendMessageForm.addEventListener("submit", function (e) {
   e.preventDefault();
   socket.emit('chat', {
-    message: message.value,
-    user: getUserName()
+    message: message.value
   });
   message.value = '';
 });
@@ -36,7 +35,7 @@ socket.on('chat', function (data) {
 
 // informing server when client starts writing a message
 message.addEventListener("keyup", function (e) {
-  socket.emit('typing', { typing: message.value.length > 0 ? true : false, user: getUserName() });
+  socket.emit('typing', { typing: message.value.length > 0 ? true : false });
 });
 
 // receiving data on chat channel to inform who's writing atm
@@ -45,10 +44,6 @@ socket.on('typing', function (data) {
   setWritingInfoMessage(parsed.user, parsed.typing ? true : false);
 });
 
-// Getting username
-function getUserName(username) {
-  return username !== undefined && username != "" ? username : document.getElementById("userName").innerHTML;
-}
 
 // "Writing" info bar's handling function
 function setWritingInfoMessage(username, status) {
